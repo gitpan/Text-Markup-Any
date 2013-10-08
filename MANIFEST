@@ -9,6 +9,7 @@ t/00_compile.t
 t/01_markdown.t
 t/02_modules.t
 xt/02_perlcritic.t
+xt/hoedown.t
 xt/perlcriticrc
 META.yml
 MANIFEST
