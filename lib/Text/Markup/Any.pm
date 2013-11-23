@@ -2,7 +2,7 @@ package Text::Markup::Any;
 use strict;
 use warnings;
 use utf8;
-our $VERSION = '0.03';
+our $VERSION = '0.04';
 
 use parent 'Exporter';
 use Class::Load qw/load_class/;
@@ -18,7 +18,7 @@ our %MODULES = (
     'Text::Markdown::Hoedown' => {
         class         => 'Text::Markdown::Hoedown::Markdown',
         markup_method => 'render',
-        args          => sub { [0, 16, Text::Markdown::Hoedown::Callbacks->html_renderer(0, 99)] },
+        args          => sub { [0, 16, Text::Markdown::Hoedown::Renderer::HTML->new(0, 99)] },
         deref         => 1,
     },
     'Text::Xatena'              => {markup_method => 'format'},
@@ -128,8 +128,9 @@ Text::Markup::Any - Common Lightweight Markup Language Interface
 =head1 DESCRIPTION
 
 Text::Markup::Any is Common Lightweight Markup Language Interface.
-Currently supported modules are Text::Markdown, Text::MultiMarkdown,
-Text::Markdown::Discount, Text::Xatena and Text::Textile.
+Currently supported modules are L<Text::Markdown>, L<Text::MultiMarkdown>,
+L<Text::Markdown::Discount>, L<Text::Markdown::GitHubAPI>,
+L<Text::Markdown::Hoedown>, L<Text::Xatena> and L<Text::Textile>.
 
 =head1 AUTHOR
 
